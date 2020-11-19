@@ -12,9 +12,7 @@ from django.conf import settings
 from django.core.mail.backends import smtp 
 # Create your views here.
 
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+
 
 @csrf_exempt
 def product_list(request):
