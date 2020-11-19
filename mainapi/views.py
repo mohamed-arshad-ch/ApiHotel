@@ -44,7 +44,7 @@ def buydish(request , pk):
         
         snippet.product_stock = int(snippet.product_stock) - 1
         snippet.save()
-        send_mail("hello ","Total Availabel Stock Of "+ snippet.product_name +" is "+ str(snippet.product_stock) , "mohamedarshadcholasseri5050@gmail.com", ["vyshnuakku@gmail.com"])
+        send_mail("hello ","Total Availabel Stock Of "+ snippet.product_name +" is "+ str(snippet.product_stock) , "mohamedarshadcholasseri5050@gmail.com", ["contact@subdine.com"])
         sales = Sales.objects.create(product=snippet)
         return JsonResponse({"Available Stock":snippet.product_stock,"sales No":sales.id}, status=201)
     return JsonResponse(serializer.errors, status=400)
